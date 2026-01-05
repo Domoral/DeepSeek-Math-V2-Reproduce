@@ -15,9 +15,9 @@ from openai import AsyncOpenAI
 class APIModel:
     def __init__(self):
         self.client = AsyncOpenAI(
-            api_key="xxx",
+            api_key="sk-804c83d27e1a481bbaac5af208f65725",
             timeout=300000,
-            base_url="yyy"
+            base_url="https://api.deepseek.com"
         )
 
     async def generate_one(self, prompt, sampling_params):

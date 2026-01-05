@@ -1,8 +1,8 @@
 set -f
 
-input_path=../IMO2025.json,../CMO2024.json,../CMO2025.json
+input_path=../inputs/IMO2025.json,../inputs/CMO2024.json,../inputs/CMO2025.json
 # directory to dump results
-output_dirname=xxx
+output_dirname=../myoutputs
 # directory to maintain a pool of generated proofs for each evaluated problem
 proof_pool_dirname=${output_dirname}/proof_pool
 
