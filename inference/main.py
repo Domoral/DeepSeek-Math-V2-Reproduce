@@ -33,7 +33,13 @@ parser.add_argument("--n_proofs_to_refine", type=int, default=1, help="the numbe
 parser.add_argument("--n_agg_trials", type=int, default=32, help="the number of different combinations of proofs used for refinements")
 parser.add_argument("--n_parallel_proof_gen", type=int, default=128)
 
+parser.add_argument("--proof_gen_url", type=str, default="https://api.deepseek.com", help="API URL for proof generation")
+parser.add_argument("--proof_rate_url", type=str, default="https://api.deepseek.com", help="API URL for verification")
+parser.add_argument("--proof_gen_with_self_eval", type=str, default="https://api.deepseek.com", help="API URL for meta verification")
 
+parser.add_argument("--infer_script",type=str, default = "generate", help = "generate script name" )
+
+parser.add_argument("--model", type=str, default = "deepseek-reasoner" ,help = "model name")
 parser.add_argument("--proof_verification_num_processes", type=int, default=320)
 parser.add_argument("--proof_verification_temp", type=float, default=1.0)
 parser.add_argument("--proof_verification_max_len", type=int, default=64 * 1024)
@@ -451,6 +457,7 @@ if __name__ == '__main__':
     --input_data_path {proof_gen_input_path} \
     --output_data_path {proof_gen_output_path} \
     --api_url {proof_gen_url} \
+    --model {args.model} \
     --batch_size {args.batch_size} \
     --num_processes {args.proof_gen_num_processes} \
     --temperature {args.proof_gen_temp} \
@@ -482,6 +489,7 @@ if __name__ == '__main__':
         --input_data_path {proof_verification_input_path} \
         --output_data_path {proof_verification_output_path} \
         --batch_size {args.batch_size} \
+        --model {args.model}
         --num_processes {args.proof_verification_num_processes} \
         --temperature {args.proof_verification_temp} \
         --top_p 0.95 \

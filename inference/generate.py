@@ -21,6 +21,8 @@ class APIModel:
         )
 
     async def generate_one(self, prompt, sampling_params):
+        if "model" not in sampling_params:
+            sampling_params["model"] = "deepseek-reasoner"
         res = await self.client.chat.completions.create(
             messages=prompt,
             stream=False,

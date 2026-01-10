@@ -10,6 +10,11 @@ python main.py \
     --input_paths ${input_path} \
     --output_dirname ${output_dirname} \
     --proof_pool_dirname ${proof_pool_dirname} \
+    --proof_gen_url "https://api.deepseek.com" \
+    --proof_rate_url "https://api.deepseek.com" \
+    --proof_gen_with_self_eval "https://api.deepseek.com" \
+    --model "deepseek-reasoner" \
+    --infer_script "generate" \
     --n_best_proofs_to_sample 32 \
     --n_proofs_to_refine 1 \
     --n_agg_trials 32 \
