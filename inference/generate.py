@@ -23,6 +23,7 @@ class APIModel:
     async def generate_one(self, prompt, sampling_params):
         if "model" not in sampling_params:
             sampling_params["model"] = "deepseek-reasoner"
+
         res = await self.client.chat.completions.create(
             messages=prompt,
             stream=False,
@@ -118,8 +119,7 @@ if __name__ == "__main__":
     sampling_params = dict(
         temperature=temperature,
         top_p=top_p,
-        max_tokens=max_tokens,
-        max_total_tokens=max_tokens
+        max_tokens=max_tokens
     )
 
     input_queue, output_queue = Queue(), Queue()

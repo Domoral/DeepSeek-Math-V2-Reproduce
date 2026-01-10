@@ -25,7 +25,7 @@ parser.add_argument("--batch_size", type=int, default=160)
 
 parser.add_argument("--proof_gen_num_processes", type=int, default=40)
 parser.add_argument("--proof_gen_temp", type=float, default=1.0)
-parser.add_argument("--proof_gen_max_len", type=int, default=128 * 1024)
+parser.add_argument("--proof_gen_max_len", type=int, default=65536)
 parser.add_argument("--proof_gen_template", type=str, default="proof_generation")
 parser.add_argument("--proof_refine_template", type=str, default="proof_refinement")
 parser.add_argument("--n_best_proofs_to_sample", type=int, default=32, help="the number of best proofs to consider for refinements")
