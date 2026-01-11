@@ -17,11 +17,11 @@ python main.py \
     --infer_script "generate" \
     --n_best_proofs_to_sample 4 \
     --n_proofs_to_refine 1 \
-    --n_agg_trials 32 \
-    --n_parallel_proof_gen 2 \
-    --n_verification_per_proof 2 \
-    --proof_gen_num_processes 2 \
-    --proof_verification_num_processes 2 \
+    --n_agg_trials 4 \
+    --n_parallel_proof_gen 4 \
+    --n_verification_per_proof 4 \
+    --proof_gen_num_processes 4 \
+    --proof_verification_num_processes 4 \
     --batch_size 4 \
     --skip_meta_verification \
     --start_round 1 \
