@@ -40,17 +40,17 @@ parser.add_argument("--proof_gen_with_self_eval", type=str, default="https://api
 parser.add_argument("--infer_script",type=str, default = "generate", help = "generate script name" )
 
 parser.add_argument("--model", type=str, default = "deepseek-reasoner" ,help = "model name")
-parser.add_argument("--proof_verification_num_processes", type=int, default=320)
+parser.add_argument("--proof_verification_num_processes", type=int, default = 4)
 parser.add_argument("--proof_verification_temp", type=float, default=1.0)
-parser.add_argument("--proof_verification_max_len", type=int, default=64 * 1024)
+parser.add_argument("--proof_verification_max_len", type=int, default=65536)
 parser.add_argument("--proof_verification_template", type=str, default="proof_verification")
 parser.add_argument("--n_verification_per_proof", type=int, default=4)
 
 
 parser.add_argument("--skip_meta_verification", action='store_true')
-parser.add_argument("--meta_verification_num_processes", type=int, default=320)
+parser.add_argument("--meta_verification_num_processes", type=int, default=4)
 parser.add_argument("--meta_verification_temp", type=float, default=1.0)
-parser.add_argument("--meta_verification_max_len", type=int, default=64 * 1024)
+parser.add_argument("--meta_verification_max_len", type=int, default=65536)
 parser.add_argument("--meta_verification_template", type=str, default="meta_verification")
 parser.add_argument("--n_meta_verification_per_rating", type=int, default=1)
 
